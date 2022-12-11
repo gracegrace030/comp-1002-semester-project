@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script/main.js" defer></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <title>Coozhion - Coozy Cushion</title>
+</head>
+<body id="about">
+    <nav id="navigation">
+        <a id="btn_menu" class="button btn_icon btn_menu"></a>
+        <a class="logo" href="./index.html"><img src="./image/logo.png" alt="coozhion-logo">COOZHION</a>
+        <div id="menu" class="menu_full menu_full_hide">
+            <a class="button btn_icon btn_back"></a>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">Coozy</a></li>
+                <li><a href="./reference.html">Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div>
+            <h1>Make Your 
+                <br>Coozhion</h1>
+            <p>Create your own style.
+                <br>Stay unique!
+            </p>
+        </div>
+        <a id="btn_customize" class="button btn_solid">Customize</a>
+    </header>
+
+    <div id="popup" class="popup">
+        <main>
+            <a class="button btn_icon btn_back"></a>
+            <div id="previewer"></div>
+            <form action="./thanks.html" method="get">
+                <fieldset class="form_p1">
+                    <legend><span>Step 1</span>Choose A Color</legend>
+                    <input type="radio" name="cushion_color" id="cushion_white" value="white" required checked>
+                    <input type="radio" name="cushion_color" id="cushion_black" value="black" required>
+                    <input type="radio" name="cushion_color" id="cushion_red" value="red" required>
+                    <br>
+                    <p class="subtotal">Subtotal: <span class="price">CA$<span>200</span></span></p>
+                    <button class="button btn_solid btn_next" type="button">Next</button>
+                </fieldset>
+
+                <fieldset class="form_p2">
+                    <legend><span>Step 2</span> A Pattern</legend>
+                    <select name="cushion_pattern" id="cushion_pattern" required>
+                        <option value="none">None</option>
+                        <option value="dot">Grid (+$20)</option>
+                        <option value="grid">Flower (+$20)</option>
+                    </select>
+                    <br>
+                    <p class="subtotal">Subtotal: <span class="price">CA$<span>200</span></span></p>
+                    <button type="button" class="button btn_solid btn_prev">Previous</button>
+                    <input type="submit" class="button btn_solid btn_submit" value="Submit">
+                </fieldset>
+            </form>
+        </main>
+    </div>
+
+    <footer>
+        ©2022 Grace Kwong | image source: <a href="https://unsplash.com/photos/3dmu0gu23uc" target="_blank">unsplash</a>
+    </footer>
+
+    <script>
+        
+
+    </script>
+</body>
+</html>

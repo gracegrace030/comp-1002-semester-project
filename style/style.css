@@ -1,0 +1,348 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Syne:wght@700;800&display=swap');
+
+/* CSS files */
+@import url(reset.css);
+@import url(./responsive.css);
+
+/* Variables */
+:root {
+    --white: #fff;
+    --main-color: #313B59;
+    --gradient-color-1: #47CACC;
+    --gradient-color-2: rgba(123,97,255,0.2);
+    --gradient-color-2-solid: #b2a2ff;
+    --popup-bg: rgba(49, 59, 89, 0.8);;
+    /* #7B61FF, #DFD8FF*/
+
+    --window-padding-LR: 20px;
+    --window-padding-TB: 10px;
+    --border-radius: 10px;
+}
+
+/* General */
+body {
+    font-family:'Michroma', 'Syne', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05rem;
+    color: var(--main-color);
+}
+
+h1{
+    font-family: 'Syne', Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+
+    margin-bottom: 1.25rem;
+}
+
+a{
+    cursor: pointer;
+}
+
+.button{
+    text-decoration: none;
+    font-family: 'Syne',sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    padding: 1rem 2rem;
+
+    transition: all 0.5s;
+}
+
+.button:hover{
+    scale: 1.05;
+    opacity: 0.8;
+}
+
+.button:active{
+    scale: 1;
+    opacity: 0.5;
+}
+
+.btn_icon{
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    scale: 1;
+    transition: scale 0.5s, opacity 0.5s;
+}
+
+.btn_icon:hover{
+    scale: 1.05;
+    opacity: 0.8;
+}
+
+.btn_icon:active{
+    scale: 0.9;
+}
+
+.btn_solid{
+    color: var(--white);
+    border: 0px solid;
+    background:linear-gradient(var(--gradient-color-1), var(--gradient-color-2));
+}
+
+.btn_back{
+    background-image: url(../image/icon_back.svg);
+}
+
+.btn_menu{
+    background-image: url(../image/icon_menu.svg);
+}
+
+.btn_menu, .btn_back{
+    position: absolute;
+    top: var(--window-padding-TB);
+    left: var(--window-padding-LR);
+}
+
+#navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    height: 72px;
+    padding: var(--window-padding-TB) var(--window-padding-LR);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#navigation .logo{
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Syne';
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+
+.logo img{
+    width: 30px;
+    height: 30px;
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+#menu a{
+    color: var(--white);
+    transition: font-size 0.5s, color 0.5s;
+}
+
+#menu > ul li{
+    padding: 0.5rem 0;
+}
+
+#menu a:hover{
+    color: var(--main-color);
+}
+
+#menu > ul li:hover{
+    font-size: 2.5rem;
+}
+
+.menu_full{
+    opacity: 0;
+    top: -100vh;
+    /* opacity: 1; */
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(var(--gradient-color-1),var(--gradient-color-2-solid));
+    font-family: 'Syne',sans-serif;
+    font-size: 2em;
+    font-weight: 800;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 var(--window-padding-LR);
+    text-align: center;
+
+    position: relative;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: 0.6;
+}
+
+footer{
+    width: 100%;
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 2rem;
+}
+
+/* Homepage + About Page */
+#home > header::before{
+    background-image: url(../image/milad-fakurian-GJKx5lhwU3M-unsplash.jpg);
+}
+
+#home header > div, #about header > div, #thanks header >div{
+    position: relative;
+}
+
+#home header > .button, #about header > .button, #thanks header > .button{
+    position: relative;
+    top: 3rem;
+}
+
+/* About Page */
+#about > header::before{
+    background-image: url(../image/milad-fakurian-Dkvmsxdnsgs-unsplash.jpg);
+}
+
+.popup{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--popup-bg);
+    z-index: 2;
+}
+
+.popup{
+    opacity: 0;
+    top: -100vh;
+    left: 0;
+    transition: opacity 0.5s;
+}
+
+.popup > main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 90vw;
+    height: 95vh;
+    max-width: 1280px;
+    max-height: 768px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    background-color: var(--white);
+}
+
+form{
+    width: 100%;
+    padding: 0 10vw;
+}
+
+.form_p1{
+    display:block;
+}
+
+.form_p2{
+    display:none;
+}
+
+legend {
+    font-family: 'Syne',sans-serif;
+    font-size: 1.5rem;
+}
+
+legend span{
+    display: block;
+    font-family: 'Michroma',sans-serif;
+    font-size: 1rem;
+}
+
+#previewer{
+    width: 60vw;
+    height: 60vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../image/cushion_white.jpg);
+    margin: 10vw;
+}
+
+input[type=radio] {
+    scale: 2.5;
+    margin: 1rem;
+}
+
+
+input[type=radio]#cushion_white {
+    accent-color: #eee;
+}
+
+input[type=radio]#cushion_black {
+    accent-color: #000;
+}
+
+input[type=radio]#cushion_red {
+    accent-color: #FF0000;
+}
+
+select{
+    width: 100%;
+    margin: 1rem 0;
+    font-family: inherit;
+}
+
+.subtotal{
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+form .button{
+    padding: 0.5rem 2rem;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+/* Thanks Page */
+#thanks header{
+    background: linear-gradient(#434582, #48C9CC);
+    color: #BECDF8;
+}
+
+.show{
+    top: 0;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
