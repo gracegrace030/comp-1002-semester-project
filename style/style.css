@@ -93,11 +93,15 @@ a{
     background-image: url(../image/icon_back.svg);
 }
 
+.btn_cross{
+    background-image: url(../image/icon_cross.svg);
+}
+
 .btn_menu{
     background-image: url(../image/icon_menu.svg);
 }
 
-.btn_menu, .btn_back{
+.btn_menu, .btn_back, .btn_cross{
     position: absolute;
     top: var(--window-padding-TB);
     left: var(--window-padding-LR);
@@ -266,7 +270,7 @@ footer{
 
 form{
     width: 100%;
-    padding: 0 10vw;
+    padding: 10vw;
 }
 
 .form_p1{
@@ -288,14 +292,22 @@ legend span{
     font-size: 1rem;
 }
 
-#previewer{
-    width: 60vw;
-    height: 60vw;
+#previewer, #layer_1{
+    height: 100%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+#previewer{
+    width: 60%;
     background-image: url(../image/cushion_white.jpg);
-    margin: 10vw;
+    margin: 5vw;
+}
+
+#layer_1{
+    width: 100%;
+    background-image: none;
 }
 
 input[type=radio] {

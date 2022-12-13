@@ -14,7 +14,7 @@ btn_back_menu.addEventListener("click", () => {
 // Popup
 const btn_customize = document.getElementById("btn_customize");
 const popup = document.getElementById("popup");
-const btn_back_popup = document.querySelector("#popup .btn_back");
+const btn_back_popup = document.querySelector("#popup .btn_cross");
 const form_p1 = document.querySelector(".form_p1");
 const form_p2 = document.querySelector(".form_p2");
 const btn_next_form1 = document.querySelector(".form_p1 .btn_next");
@@ -39,6 +39,9 @@ btn_next_form1.addEventListener("click", ()=>{
 btn_prev_form2.addEventListener("click", ()=>{
     form_p1.style.display = "block";
     form_p2.style.display = "none";
+
+    document.querySelector(".form_p2 select").value = 'none';
+    document.getElementById("layer_1").style.backgroundImage = "none";
 })
 
 //Radio Buttons
@@ -59,41 +62,50 @@ document.querySelector(".form_p2 select").addEventListener("change", ()=>{
     let priceTag = document.querySelectorAll("fieldset .price span");
 
     if(patternArr[0].selected){
-        document.getElementById("previewer").style.backgroundImage = "url(./image/cushion_white.jpg)";
+        //Price
         priceTag[0].innerHTML = 200;
         priceTag[1].innerHTML = 200;
 
+        //Image
+        document.getElementById("layer_1").style.backgroundImage = "none";
+
     }
     else if (patternArr[1].selected){
-        document.getElementById("previewer").style.backgroundImage = "url(./image/cushion_grid.png)";
+        //Price
         priceTag[0].innerHTML = 220;
         priceTag[1].innerHTML = 220;
+
+        //Image
+        document.getElementById("layer_1").style.backgroundImage = "url(./image/cushion_grid.png)";
     }
     else if (patternArr[2].selected){
-        document.getElementById("previewer").style.backgroundImage = "url(./image/cushion_flower.png)";
+        //Price
         priceTag[0].innerHTML = 220;
         priceTag[1].innerHTML = 220;
+
+        //Image
+        document.getElementById("layer_1").style.backgroundImage = "url(./image/cushion_flower.png)";
     };
 })
 
 
 
-//Price Check
-function calculatePrice(){
-    const patternChoiceIndex = document.getElementById("cushion_pattern").selectedIndex;
-    let cushionPrice = 200;
-    if (patternChoiceIndex === 0){
-        cushionPrice = 200;
-    }
-    else {
-        cushionPrice = 220;
-    }
-    return cushionPrice;
-}
+// //Price Check
+// function calculatePrice(){
+//     const patternChoiceIndex = document.getElementById("cushion_pattern").selectedIndex;
+//     let cushionPrice = 200;
+//     if (patternChoiceIndex === 0){
+//         cushionPrice = 200;
+//     }
+//     else {
+//         cushionPrice = 220;
+//     }
+//     return cushionPrice;
+// }
 
-patternChoice.addEventListener("mouseout", () =>{
-    let cushionPrice = calculatePrice();
-    let priceTag = document.querySelectorAll("fieldset .price span");
-    priceTag[0].innerHTML = cushionPrice;
-    priceTag[1].innerHTML = cushionPrice;
-})
+// patternChoice.addEventListener("mouseout", () =>{
+//     let cushionPrice = calculatePrice();
+//     let priceTag = document.querySelectorAll("fieldset .price span");
+//     priceTag[0].innerHTML = cushionPrice;
+//     priceTag[1].innerHTML = cushionPrice;
+// })
